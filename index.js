@@ -19,7 +19,8 @@ const runWasmAdd = async () => {
   // Call the Add function export from wasm, save the result
   const addResult = wasmModule.instance.exports.add(2433, 24);
 
+  const printName = wasmModule.instance.exports.printName();
   // Set the result onto the body
-  document.body.textContent = `Hello World! addResult: ${addResult}`;
+  document.body.textContent = `Hello World! addResult: ${addResult} -- printName: ${printName}`;
 };
 runWasmAdd();
